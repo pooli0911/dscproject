@@ -257,3 +257,25 @@ div{
     width: 54px;
     margin-bottom: 27px;
 }
+/* ------profile------ */
+.profile_img{
+    position: absolute;
+    top: 100px;
+    border-radius: 50%;
+}
+#de{
+    padding-top:120px;
+    height: 100vh;
+    background-color: #FFF9F2;
+}
+.a_line{
+    height: 1px;
+    width: 80%;
+    margin:3% 10%;
+    background-color: #555555;
+}
+.next_icon{
+    height: 54px;
+    width: 54px;
+    margin-bottom: 27px;
+}
