@@ -1,0 +1,15 @@
+div{
+    transition: 0.5s ease-out;
+}
+#b{
+    transform: translateX(100vw);
+}
+#b.active{
+    transform: translateX(0vw);
+}
+#a{
+    transform: translateX(-100vw);
+}
+#a.active{
+    transform: translateX(0vw);
+}

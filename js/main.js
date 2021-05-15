@@ -15,19 +15,31 @@ function touchEvent(event) {
     case "touchmove":
       event.preventDefault();
       if(tempx-intX>screen.width/40){
-        if(direct=='none')direct="left"
+        if(direct=='none')direct="right"
       }
       if(intX-tempx>=screen.width/40){
-          if(direct=='none')direct="right"
+        if(direct=='none'){
+          direct="left"
+        }
       }
       tempx=intX
       break;
     case "touchend":
+        switch(direct){
+            case 'left':
+                document.getElementById("a").classList.add("active");
+                document.getElementById("b").classList.remove("active");
+                break;
+            case'right':
+                document.getElementById("b").classList.add("active");
+                document.getElementById("a").classList.remove("active");
+                break;
+        }
         console.log(direct)
       break;
   }
 }
 
-document.addEventListener("touchstart", touchEvent, false);
-document.addEventListener("touchmove", touchEvent, false);
-document.addEventListener("touchend", touchEvent, false);
+document.addEventListener("touchstart", touchEvent, { passive: false });
+document.addEventListener("touchmove", touchEvent, { passive: false });
+document.addEventListener("touchend", touchEvent, { passive: false });
