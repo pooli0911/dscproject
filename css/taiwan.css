@@ -1,0 +1,27 @@
+
+  
+  svg {
+height: 84vh;
+  }
+  
+  path {
+    stroke: #555555;
+    fill: transparent;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  path:hover{
+      fill:#d1d1d1;
+  }
+  .taipei:hover, .newtaipei:hover, .taoyuan:hover, .yilan:hover, .taichung:hover{
+    fill: #ffa6a6;
+  }
+  .changhua:hover, .hsunchu-c:hover{
+      fill: #ffcc99;
+  }
+  .keelung:hover{
+      fill: #ffed75;
+  }
+  .kaohsung:hover, .tainan:hover, .nantou:hover{
+    fill: #aee38f;
+  }
