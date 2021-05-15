@@ -77,7 +77,7 @@ $('#setpass').click( (e)=> {
                     var user = userCredential.user;
                     user.updateProfile({photoURL: doc.data().photoURL}).then(function() {
                         console.log(user)
-                        window.location.href="./index.html";
+                        window.location.href="./personinfo.html?"+param;
                     }).catch(function(error) {
                         console.log("Error getting document:", error);
                     });
@@ -89,6 +89,23 @@ $('#setpass').click( (e)=> {
             })
         } else {
             console.log("does not exists");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    })
+});
+$('#personinfo').click((e)=> { 
+    docRef=db.collection("profiles").doc(param)
+    docRef.get().then((doc) => {
+        if (doc.exists) {
+            docRef.set({adress:email.val(),home:password.val(),phone:conpass.val()},{ merge: true }).then(() => {
+                console.log("Update successful.")
+                window.location.href="./finish.html"
+            }).catch(function(error) {
+                console.log(error);
+            });
+        } else {
+            console.log("not exist");
         }
     }).catch((error) => {
         console.log("Error getting document:", error);
