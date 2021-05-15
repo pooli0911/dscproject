@@ -215,3 +215,26 @@ div{
     background-color: #000!important;
 }
 
+/* ------delivery------ */
+.delivery_title{
+    margin-left: 5%;
+    font-weight: 800;
+    font-size: 36px;
+    color: #555555;
+}
+#de{
+    padding-top:120px;
+    height: 100vh;
+    background-color: #FFF9F2;
+}
+.a_line{
+    height: 1px;
+    width: 80%;
+    margin:3% 10%;
+    background-color: #555555;
+}
+.next_icon{
+    height: 54px;
+    width: 54px;
+    margin-bottom: 27px;
+}
