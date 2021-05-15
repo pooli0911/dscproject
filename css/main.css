@@ -2,7 +2,7 @@ body{
     overflow-x: hidden;
 }
 div{
-    transition: 0.5s ease-out;
+    transition: 1.2s cubic-bezier(0.2,0,0,1);
 }
 #b{
     transform: translateX(100vw);

@@ -15,10 +15,10 @@ function touchEvent(event) {
       break;
     case "touchmove":
       event.preventDefault();
-      if(tempx-intX>screen.width/40){
+      if(tempx-intX>25){
         if(direct=='none')direct="right"
       }
-      if(intX-tempx>=screen.width/40){
+      if(intX-tempx>=25){
         if(direct=='none'){
           direct="left"
         }
@@ -45,14 +45,17 @@ document.addEventListener("touchstart", touchEvent, { passive: false });
 document.addEventListener("touchmove", touchEvent, { passive: false });
 document.addEventListener("touchend", touchEvent, { passive: false });
 function wheelEvent(event){
-    if(event.wheelDelta>=0){
+    if((lscroll<=200&&event.wheelDelta>=0)||((lscroll>=-200)&&(event.wheelDelta<=0))){
+        lscroll+=event.wheelDelta;
+    }
+    console.log(lscroll)
+    if(lscroll>=60){
         document.getElementById("a").classList.add("active");
         document.getElementById("b").classList.remove("active");
     }
-    if(event.wheelDelta<=100){
+    if(lscroll<=-60){
         document.getElementById("b").classList.add("active");
         document.getElementById("a").classList.remove("active");
     }
-    lscroll=window.scrollY;
 }
 document.addEventListener("wheel",wheelEvent);
