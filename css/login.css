@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+.login_flex{
+    display:flex;
+    justify-content: space-around;
+    margin:auto;
+    padding:5% 10%;
+    align-items:flex-start;
+    background-color: #FFE8C9;
+}
+.login_text{
+    width:400px;
+}
+.login_title{
+    font-size: 64px;
+    font-family: 'Kosugi Maru', sans-serif;
+    margin-top:3%;
+    width:430px;
+    height:95px;
+}
+.login_slogan{
+    font-size:28px;
+    font-family: 'Kosugi Maru', sans-serif;
+    margin-left:17%;
+    margin-top:7%;
+}
+.login_img{
+    width:330px;
+    height:300px;
+    margin-left:15%;
+    margin-top:0%;
+}
+.line{
+    height:550px;
+    border: solid 0.5px;
+    margin: 0 30px;
+}
+.login_form{
+    width:400px;
+}
+.login{
+    margin-left:38%;
+    margin-top:15%;
+    font-size: 48px;
+    font-family: 'Kosugi Maru', sans-serif;
+    color:#555555;
+}
+.form-control{
+    background-color: #fff !important;
+    opacity: 60% !important;
+    border:#555555 !important;
+    border-radius: 10px !important;
+}
+.id_form{
+    margin-top:30px;
+    font-size: 32px;
+    font-family: 'Kosugi Maru', sans-serif;
+    color:#555555;
+}
+.number_form{
+    font-size: 32px;
+    font-family: 'Kosugi Maru', sans-serif;
+    color:#555555;
+}
+.forget,
+.install{
+    font-size: 24px;
+    font-family: 'Kosugi Maru', sans-serif;
+    color:#DE926F;
+}
+.log_btn{
+    margin-left:60%;
+    margin-top:20px;
+}
+.btn-primary{
+    width:160px;
+    height:55px;
+    background-color: #fff !important;
+    opacity: 60% !important;
+    color:#555555 !important;
+    border:#555555 !important;
+    border-radius: 10px !important;
+}
+.btn-primary:hover{
+    background-color:#DE926F !important;
+    color:#fff !important;
+}
