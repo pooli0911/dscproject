@@ -65,17 +65,27 @@ div{
 }
 
 .logo_title_slogan{
-    width: 853px;
-    height: 195px;
+    width: 800px;
+    /* height: 195px; */
     margin-right: 60px;
 }
 .logo_title_img{
     width: 300px;
     height: 300px;
 }
+.animate__fadeInLeft{
+    animation-delay: 1.5s;
+}
+.animate__fadeInRight{
+    animation-delay: 1.5s;
+}
+.animate__fadeIn{
+    animation-delay: 2.5s;
+}
 .logo_subtitle{
     font-family: 'Kosugi Maru', sans-serif;
     font-size: 36px;
+    color: #555555;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -103,6 +113,7 @@ div{
 }
 .function_area p{
     font-family: 'Kosugi Maru', sans-serif;
+    color: #555555;
     font-size: 24px;
     margin-top: 10px;
 }
