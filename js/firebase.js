@@ -14,6 +14,13 @@ $('#signup').click(()=>{
     firebase.auth().createUserWithEmailAndPassword(email.val(), password.val()).then((userCredential) => {
         var user = userCredential.user;
         console.log(user)
+        user.updateProfile({
+            photoURL: "./img/youngwoman.png"
+          }).then(function() {
+            console.log("Update successful.")
+          }).catch(function(error) {
+            console.log(error)
+          });
     })
     .catch((error) => {
         var errorCode = error.code;
@@ -32,12 +39,22 @@ $('#signin').click(()=>{
         console.log(errorCode+errorMessage)
     });
 })
+$('#signout').click(()=>{
+    firebase.auth().signOut().then(() => {
+        console.log("Sign-out successful.")
+        window.location.href="./index.html";
+      }).catch((error) => {
+        console.log(error)
+      });
+})
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       var uid = user.uid;
       console.log(uid)
-      console.log(user.photourl)
-      $('.nav_account').attr("src",user.photourl)
+      console.log(user.photoURL)
+      $('.nav_account').attr("src",user.photoURL)
+      $('.nav_account').attr("style","border-radius:50%")
+      $('#profile').html('<a href="profile.html"><img src="./img/information.png" alt="1060387" class="function_icon"></a><p>個人頁面</p>');
     } else {
     }
   });
