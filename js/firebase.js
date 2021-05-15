@@ -32,3 +32,12 @@ $('#signin').click(()=>{
         console.log(errorCode+errorMessage)
     });
 })
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      var uid = user.uid;
+      console.log(uid)
+      console.log(user.photourl)
+      $('.nav_account').attr("src",user.photourl)
+    } else {
+    }
+  });
