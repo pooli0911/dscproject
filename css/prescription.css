@@ -1,0 +1,201 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+html{
+    background: #FFF9F2;
+}
+body{
+    overflow-x: hidden;
+    min-height: 100vh;
+    width: 100vw;
+    color: #555555 !important;
+    font-family: 'Kosugi Maru', sans-serif;
+}
+.color{
+    background: #FFF9F2;
+    min-height: 100vh;
+    width: 100vw;
+}
+/* ------nav------ */
+.nav{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    background-color: #FFE8C9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav_left_flex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 50px;
+}
+.nav_right_flex{
+    display: flex;
+    flex-direction: row;
+    margin-right: 60px;
+    
+}
+.nav_logo{
+    width: 80px;
+    height: 80px;
+}
+.nav_title{
+    width: 182px;
+    height: 42px;
+    
+    margin-left: 25px;
+}
+.nav_remind{
+    width: 40px;
+    height: 40px;
+    
+    margin-right: 25px;
+}
+.nav_account{
+    width: 40px;
+    height: 40px;
+   
+}
+
+/* ------nav------ */
+.prep_container{
+    margin-top: 160px;
+    margin-left: 95px;
+    margin-right: 95px;
+}
+.prep_title{
+    font-size: 36px;
+}
+.date_text{
+    width: 130px;
+}
+
+/* .login_flex{
+    display:flex;
+    justify-content: space-around;
+}
+.login_text{
+    border: solid 1px;
+    width:400px;
+} */
+
+/* .line{
+    height:200px;
+    border: solid 0.5px;
+    margin:30px;
+}
+.login_form{
+    border: solid 1px;
+    width:400px;
+} */
+.head_text{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 70px;
+}
+.doc_date{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.date_text{
+    margin: 0;
+}
+.form-select{
+    margin-left: 10px;
+    height: 30px;
+}
+
+.date_duartion{
+    display:flex;
+    margin-left:100px;
+}
+
+/* ---------------------- */
+
+.first_box{
+    border:solid 1px;
+    border-radius: 15px;
+    margin:auto;
+    margin-top:50px;
+    background: rgba(255, 255, 255, 0.6);
+}
+.accordion-body{
+    padding: 0;
+}
+.row_line{
+    width:90%;
+    margin:auto;
+    border:solid 0.5px;
+}
+.line2{
+    margin-top:5px;
+}
+
+
+.text2{
+    margin-left:5%;
+}
+
+
+
+.date{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left:5%;
+}
+.name{
+    display:flex;
+    margin-left:5%;
+}
+.doc{
+    display:flex;
+    margin-left:5%;
+}
+.madchine{
+    display:flex;
+    flex-direction: row;
+}
+/* .accordion-button{
+    width: 20px;
+} */
+.butn_flex{
+    margin-left: 5%;
+    margin-top: 10px;
+}
+.mad{
+    margin-left: 100px;
+}
+/* .accordion{
+    border-radius: 15px;
+} */
+.accordion-button{
+    color: #555 ;
+    padding: 0;
+    padding-right: 20px;
+    border-radius: 50%;
+}
+.accordion-button:not(.collapsed) {
+    color:#555555;
+    
+    background-color: rgba(255, 255, 255, 0.6)!important;
+}
+
+.accordion-button:not(.collapsed) {
+
+    box-shadow: none;
+}
+.accordion-button:focus{
+    box-shadow: none; 
+}
+
+.bottom{
+    height: 100px;
+}
