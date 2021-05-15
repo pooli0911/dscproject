@@ -177,7 +177,7 @@ div{
     
     height: 100%;
     margin-top: 100px;
-    margin-left: 150px;
+    margin-left: 15%;
     
 }
 .left_flex{
@@ -224,10 +224,9 @@ div{
 
 }
 .right_maps{
-    width: 550px;
-    height: 300px;
-    background: rgb(255, 113, 113);
-    margin-left: 200px;
+    /* width: 550px; */
+    /* background: rgb(255, 113, 113); */
+    margin-left: 30%;
 }
 
  .spancolor li{
@@ -279,3 +278,21 @@ div{
     width: 54px;
     margin-bottom: 27px;
 }
+
+
+/* for delivery page */
+.tiny_time{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.icon_ani{
+    transition: 0.3s transform;
+}
+.icon_ani:hover{
+    transition: 0.3s transform;
+    transform: scale(1.15);
+}
+
+  
