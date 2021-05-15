@@ -6,28 +6,31 @@ var firebaseConfig = {
     messagingSenderId: "119977139740",
     appId: "1:119977139740:web:c2da48662cd7f955da09d9"
 };
-
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
 var db = firebase.firestore();
 const email=$("#email");
 const password=$("#password")
+const conpass=$("#password2")
 var docRef=null
+var url = document.location.href
+var param = url.split('?')[1]
 $('#signup').click(()=>{
     docRef=db.collection("profiles").doc(email.val())
     docRef.get().then((doc) => {
         if (!doc.exists) {
             docRef.set({id:email.val(), healthid:password.val(), photoURL: "./img/youngwoman.png"}).then(() => {
                 console.log("Update successful.")
-                window.location.href="./confirm.html";
+                window.location.href="./confirm.html?"+email.val();
             }).catch(function(error) {
                 console.log(error);
             });
         } else {
-            if(!doc.data().password.exists){
+            if(!doc.data().password){
                 docRef.set({id:email.val(), healthid:password.val(), photoURL: "./img/youngwoman.png"}).then(() => {
                     console.log("Update successful.")
-                    window.location.href="./confirm.html";
+                    window.location.href="./confirm.html?"+email.val();
                 }).catch(function(error) {
                     console.log(error);
                 });
@@ -44,7 +47,7 @@ $('#signin').click(()=>{
     docRef.get().then((doc) => {
         if (doc.exists) {
             if(doc.data().password==password.val()){
-                firebase.auth().signInWithEmailAndPassword(email.val(), password.val()).then((userCredential) => {
+                firebase.auth().signInWithEmailAndPassword(email.val()+"@dsc.com", password.val()).then((userCredential) => {
                     var user = userCredential.user;
                     console.log(user)
                     window.location.href="./index.html";
@@ -61,6 +64,36 @@ $('#signin').click(()=>{
         console.log("Error getting document:", error);
     })
 })
+$('#setpass').click( (e)=> {
+    if(conpass.val()!=password.val()){
+        console.log("password not same")
+        return 0;
+    }
+    docRef=db.collection("profiles").doc(param)
+    docRef.get().then((doc) => {
+        if (doc.exists) {
+            docRef.set({password:password.val()},{ merge: true }).then(()=>{
+                firebase.auth().createUserWithEmailAndPassword(param+"@dsc.com", password.val()).then((userCredential) => {
+                    var user = userCredential.user;
+                    user.updateProfile({photoURL: doc.data().photoURL}).then(function() {
+                        console.log(user)
+                        window.location.href="./index.html";
+                    }).catch(function(error) {
+                        console.log("Error getting document:", error);
+                    });
+                }).catch((error) => {
+                    console.log("Error getting document:", error);
+                });
+            }).catch((error)=>{
+                console.log("Error getting document:", error);
+            })
+        } else {
+            console.log("does not exists");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    })
+});
 $('#signout').click(()=>{
     firebase.auth().signOut().then(() => {
         console.log("Sign-out successful.")
