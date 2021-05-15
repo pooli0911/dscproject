@@ -278,3 +278,21 @@ div{
     width: 54px;
     margin-bottom: 27px;
 }
+
+
+/* for delivery page */
+.tiny_time{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.icon_ani{
+    transition: 0.3s transform;
+}
+.icon_ani:hover{
+    transition: 0.3s transform;
+    transform: scale(1.15);
+}
+
+  
