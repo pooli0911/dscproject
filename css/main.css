@@ -203,9 +203,7 @@ div{
     height: 250px;
     
 }
-.left_notices{
 
-}
 .notices_title{
     font-family: 'Kosugi Maru', sans-serif;
     font-size: 30px;
@@ -221,9 +219,6 @@ div{
 }
 #app{
     display: flex;
-}
-.right_flex{
-
 }
 .right_maps{
     /* width: 550px; */
