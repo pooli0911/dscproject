@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ID</title>
-    <link rel="icon" type="image/png" href="./img/favicon.ico" />
+    <link rel="icon" type="image/png" href="./img/logo-image.png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/loader.css">
     <link rel="stylesheet" href="./css/id.css">
 </head>
+
 <body>
     <div class="login_flex">
         <div class="login_text">
             <a href="index.html"><img class="login_img" src="./img/logo-image.png" alt="logo-image"></a>
-            <a href="index.html"><img class="login_title" src="./img/logo-text.png" alt="logo-text" ></a>
+            <a href="index.html"><img class="login_title" src="./img/logo-text.png" alt="logo-text"></a>
             <div class="login_slogan">厝邊有藥師 社區有醫院</div>
         </div>
         <div class="line"></div>
         <div class="login_form">
             <div class="circle_form">
-                <div class="circle circle1"><p class="circle_number circle_number1">1</p></div>
+                <div class="circle circle1">
+                    <p class="circle_number circle_number1">1</p>
+                </div>
                 <div class="circle_line"></div>
-                <div class="circle circle2"><p class="circle_number circle_number2">2</p></div>
+                <div class="circle circle2">
+                    <p class="circle_number circle_number2">2</p>
+                </div>
                 <div class="circle_line"></div>
-                <div class="circle circle3"><p class="circle_number circle_number3">3</p></div>
+                <div class="circle circle3">
+                    <p class="circle_number circle_number3">3</p>
+                </div>
             </div>
             <p class="input_text">請輸入以下資料</p>
             <img class="signup02" src="img/signup_02.jpeg" alt="signup_02">
@@ -32,25 +41,25 @@
                 <div class="id_box">
                     <form>
                         <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label">身分證字號</label>
-                          <input type="text" class="form-control" id="email" aria-describedby="emailHelp">
+                            <label for="exampleInputEmail1" class="form-label">身分證字號</label>
+                            <input type="text" class="form-control" id="email" aria-describedby="emailHelp">
                         </div>
-                      </form>
+                    </form>
                 </div>
             </div>
             <div class="number_form">
                 <div class="number_box">
                     <form>
                         <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label">健保卡卡號</label>
-                          <input type="text" class="form-control" id="password" aria-describedby="emailHelp">
+                            <label for="exampleInputEmail1" class="form-label">健保卡卡號</label>
+                            <input type="text" class="form-control" id="password" aria-describedby="emailHelp">
                         </div>
-                      </form>
+                    </form>
                 </div>
             </div>
-            
+
             <div class="log_btn">
-             <button type="submit" id="signup" class="btn btn-primary">確定</button>
+                <button type="submit" id="signup" class="btn btn-primary">確定</button>
             </div>
         </div>
     </div>
@@ -65,5 +74,30 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
     <script src="./js/firebase.js"></script>
+    <script type="text/javascript">
+        var loader;
+        function loadNow(opacity) {
+            if (opacity <= 0) {
+                displayContent();
+            }
+            else {
+                loader.style.opacity = opacity;
+                window.setTimeout(function () {
+                    loadNow(opacity - 0.05)
+                }, 100);
+            }
+        }
+
+        function displayContent() {
+            loader.style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            loader = document.getElementById('loader');
+            loadNow(1);
+        });
+    </script>
 </body>
+
 </html>

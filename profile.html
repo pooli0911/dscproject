@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./img/favicon.ico" />
+    <link rel="icon" type="image/png" href="./img/logo-image.png" />
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/loader.css">
     <link rel="stylesheet" href="css/profile.css">
     <title>個人資料</title>
 </head>
 
 <body>
-    
+
     <div id="p">
         <div class="p_flex">
             <div class="nav">
@@ -25,7 +26,7 @@
                     </div>
                 </a>
                 <button id="signout"
-        style="position: absolute;margin:20px 30%;z-index: 500;width: 100px;height: 30px;">logout</button>
+                    style="position: absolute;margin:20px 30%;z-index: 500;width: 100px;height: 30px;">logout</button>
                 <div class="nav_right_flex">
                     <img src="./img/bell.png" class="nav_remind">
                     <img src="./img/profile.png" class="nav_account">
@@ -86,7 +87,30 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
     <script src="./js/firebase.js"></script>
+    <script type="text/javascript">
+        var loader;
+        function loadNow(opacity) {
+            if (opacity <= 0) {
+                displayContent();
+            }
+            else {
+                loader.style.opacity = opacity;
+                window.setTimeout(function () {
+                    loadNow(opacity - 0.05)
+                }, 100);
+            }
+        }
 
+        function displayContent() {
+            loader.style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            loader = document.getElementById('loader');
+            loadNow(1);
+        });
+    </script>
 </body>
 
 </html>
