@@ -132,6 +132,9 @@ firebase.auth().onAuthStateChanged((user) => {
             $('.nav_account').attr("src",user.photoURL)
             $('.nav_account').attr("style","border-radius:50%")
             $('#nav_account').attr("href","./profile.html")
+            $('#prescription').attr("href", "./prescription.html");
+            $('#med').attr("href", "./med.html");
+            $('#delivery').attr("href", "./delivery.html");
             $('#profile').html('<a href="profile.html"><img src="./img/information.png" alt="1060387" class="function_icon"></a><p>個人頁面</p>');
             $('.profile_img').attr("src",user.photoURL);
             $('#identity').text(doc.data().id);
