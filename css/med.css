@@ -199,3 +199,6 @@ li{
 .a-color:hover{
     color: #DE926F;
 }
+.active{
+    border: 2px #DE926F solid;
+}
