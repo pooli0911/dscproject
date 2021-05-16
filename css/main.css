@@ -234,7 +234,7 @@ div{
 .forcast{
     /* background-color: red; */
     margin-left: 10px;
-    margin-top: 300px;
+    margin-top: 100px;
     width: 300px;
 }
 .forcast h4{
@@ -243,7 +243,16 @@ div{
  .spancolor li{
     background-color: #000!important;
 }
-
+.map_title{
+    font-size: 48px;
+    margin-top: 100px;
+    font-weight: 500;
+    color: #555;
+    
+}
+.title_area{
+    margin-left: 20px;
+}
 /* ------delivery------ */
 .delivery_title{
     margin-left: 5%;
