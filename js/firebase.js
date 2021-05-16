@@ -8,36 +8,128 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+var db = firebase.firestore();
 const email=$("#email");
 const password=$("#password")
+const conpass=$("#password2")
+var docRef=null
+var url = document.location.href
+var param = url.split('?')[1]
 $('#signup').click(()=>{
-    firebase.auth().createUserWithEmailAndPassword(email.val(), password.val()).then((userCredential) => {
-        var user = userCredential.user;
-        console.log(user)
+    docRef=db.collection("profiles").doc(email.val())
+    docRef.get().then((doc) => {
+        if (!doc.exists) {
+            docRef.set({id:email.val(), healthid:password.val(), photoURL: "./img/youngwoman.png"}).then(() => {
+                console.log("Update successful.")
+                window.location.href="./confirm.html?"+email.val();
+            }).catch(function(error) {
+                console.log(error);
+            });
+        } else {
+            if(!doc.data().password){
+                docRef.set({id:email.val(), healthid:password.val(), photoURL: "./img/youngwoman.png"}).then(() => {
+                    console.log("Update successful.")
+                    window.location.href="./confirm.html?"+email.val();
+                }).catch(function(error) {
+                    console.log(error);
+                });
+            }else{
+            console.log("already exists");
+            }
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
     })
-    .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode+errorMessage)
-    });
 })
 $('#signin').click(()=>{
-    firebase.auth().signInWithEmailAndPassword(email.val(), password.val()).then((userCredential) => {
-        var user = userCredential.user;
-        console.log(user)
+    docRef=db.collection("profiles").doc(email.val())
+    docRef.get().then((doc) => {
+        if (doc.exists) {
+            if(doc.data().password==password.val()){
+                firebase.auth().signInWithEmailAndPassword(email.val()+"@dsc.com", password.val()).then((userCredential) => {
+                    var user = userCredential.user;
+                    console.log(user)
+                    window.location.href="./index.html";
+                }).catch((error) => {
+                    console.log("Error getting document:", error);
+                });
+            }else{
+                console.log("password wrong");
+            }
+        } else {
+            console.log("does not exists");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
     })
-    .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode+errorMessage)
-    });
 })
+$('#setpass').click( (e)=> {
+    if(conpass.val()!=password.val()){
+        console.log("password not same")
+        return 0;
+    }
+    docRef=db.collection("profiles").doc(param)
+    docRef.get().then((doc) => {
+        if (doc.exists) {
+            docRef.set({password:password.val()},{ merge: true }).then(()=>{
+                firebase.auth().createUserWithEmailAndPassword(param+"@dsc.com", password.val()).then((userCredential) => {
+                    var user = userCredential.user;
+                    user.updateProfile({photoURL: doc.data().photoURL}).then(function() {
+                        console.log(user)
+                        window.location.href="./personinfo.html?"+param;
+                    }).catch(function(error) {
+                        console.log("Error getting document:", error);
+                    });
+                }).catch((error) => {
+                    console.log("Error getting document:", error);
+                });
+            }).catch((error)=>{
+                console.log("Error getting document:", error);
+            })
+        } else {
+            console.log("does not exists");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    })
+});
+$('#personinfo').click((e)=> { 
+    docRef=db.collection("profiles").doc(param)
+    docRef.get().then((doc) => {
+        if (doc.exists) {
+            docRef.set({adress:email.val(),home:password.val(),phone:conpass.val()},{ merge: true }).then(() => {
+                console.log("Update successful.")
+                window.location.href="./finish.html"
+            }).catch(function(error) {
+                console.log(error);
+            });
+        } else {
+            console.log("not exist");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    })
+});
+$('#signout').click(()=>{
+    firebase.auth().signOut().then(() => {
+        console.log("Sign-out successful.")
+        window.location.href="./index.html";
+      }).catch((error) => {
+        console.log(error)
+      });
+})
+$('#enter').click(()=> { 
+    window.location.href="./id.html";
+});
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       var uid = user.uid;
       console.log(uid)
-      console.log(user.photourl)
-      $('.nav_account').attr("src",user.photourl)
+      console.log(user.photoURL)
+      $('.nav_account').attr("src",user.photoURL)
+      $('.nav_account').attr("style","border-radius:50%")
+      $('#profile').html('<a href="profile.html"><img src="./img/information.png" alt="1060387" class="function_icon"></a><p>個人頁面</p>');
     } else {
     }
   });
