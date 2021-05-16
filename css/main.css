@@ -110,7 +110,14 @@ div{
     height: 108px;
     margin-left: 70px;
     margin-right: 70px;
+    transition: 0.3s transform;
 }
+.function_icon:hover{
+    transition: 0.3s transform;
+    transform: scale(1.15);
+}
+
+
 .function_area p{
     font-family: 'Kosugi Maru', sans-serif;
     color: #555555;
