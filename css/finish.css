@@ -6,6 +6,7 @@
     padding:5% 10%;
     align-items:flex-start;
     background-color: #FFE8C9;
+    min-height: 100vh;
 }
 .login_text{
     width:400px;

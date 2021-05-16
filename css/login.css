@@ -6,6 +6,7 @@
     padding:5% 10%;
     align-items:flex-start;
     background-color: #FFE8C9;
+    min-height: 100vh;
 }
 .login_text{
     width:400px;
@@ -67,6 +68,12 @@
     font-family: 'Kosugi Maru', sans-serif;
     color:#DE926F;
 }
+.forget:hover{
+    color:#ca5e2c;
+}
+.install:hover{
+    color:#ca5e2c;
+}
 .log_btn{
     margin-left:60%;
     margin-top:20px;
@@ -79,6 +86,8 @@
     color:#555555 !important;
     border:#555555 !important;
     border-radius: 10px !important;
+    font-size: 32px;
+    font-family: 'Kosugi Maru', sans-serif;
 }
 .btn-primary:hover{
     background-color:#DE926F !important;

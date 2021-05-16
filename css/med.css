@@ -96,7 +96,9 @@ body{
     /* border: 1px red solid; */
     border-radius: 10px;
 }
-
+.pre:hover{
+    border: 2px #DE926F solid;
+}
 li{
     list-style-type: none;
     line-height: 38px;
@@ -118,6 +120,12 @@ li{
 .address{
     margin-top: 15px;
 }
+.add_adress{
+    color: #DE926F;
+}
+.add_adress:hover{
+    color: #e06830;
+}
 
 .btn_flex{
     display: flex;
@@ -127,4 +135,67 @@ li{
 }
 .btn_icon{
     margin-top: 50px;
+
+}
+.booking{
+    margin-top: 50px;
+}
+.timing{
+    background: #FFF9F2;;
+}
+.address{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* .accordion-button:not(.collapsed) {
+
+    box-shadow: none;
+}
+.accordion-button:focus{
+    box-shadow: none; 
+} */
+.btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.btn-default{
+    background: rgba(255, 255, 255, 0.6);
+    color: #DE926F;
+    font-size: 24px;
+    
+    border: none;
+    width: 160px;
+    height: 55px;
+    border: 1px solid #555555!important;
+    border-radius: 10px;
+    
+}
+.btn-default:hover{
+    background:#DE926F ;
+    color: white;
+}
+
+.form-check-input:checked {
+    background-color: #DE926F;
+    border-color: #DE926F;
+
+}
+
+.show-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.a-color{
+    color: #dba891;
+} 
+.a-color:hover{
+    color: #DE926F;
 }
