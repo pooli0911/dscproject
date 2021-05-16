@@ -220,15 +220,27 @@ div{
     background: #000;
     
 }
+#app{
+    display: flex;
+}
 .right_flex{
 
 }
 .right_maps{
     /* width: 550px; */
     /* background: rgb(255, 113, 113); */
-    margin-left: 30%;
+    margin-left: 10px;
 }
 
+.forcast{
+    /* background-color: red; */
+    margin-left: 10px;
+    margin-top: 300px;
+    width: 300px;
+}
+.forcast h4{
+    line-height: 35px;
+}
  .spancolor li{
     background-color: #000!important;
 }
