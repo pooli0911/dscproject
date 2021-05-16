@@ -292,3 +292,8 @@ div{
     margin-left: 480px;
     margin-top: 20px;
 }  
+
+li{
+    list-style-type: none;
+    margin-left: 45px;
+}
