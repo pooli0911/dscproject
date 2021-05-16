@@ -129,6 +129,7 @@ firebase.auth().onAuthStateChanged((user) => {
       console.log(user.photoURL)
       $('.nav_account').attr("src",user.photoURL)
       $('.nav_account').attr("style","border-radius:50%")
+      $('#nav_account').attr("href","./profile.html")
       $('#profile').html('<a href="profile.html"><img src="./img/information.png" alt="1060387" class="function_icon"></a><p>個人頁面</p>');
     } else {
     }
