@@ -5,7 +5,7 @@
 ### 2. 作者名字 (含信箱)
 * 國立臺北教育大學 顏嘉鈺 staypooli@gmail.com
 * 國立臺北教育大學 王思喬 m0983557762@gmail.com
-* 國立臺北教育大學 林昭誠 jjaacckk41208@gmail.com
+* 國立臺北教育大學 林昭成 jjaacckk41208@gmail.com
 * 國立臺北教育大學 陳彥融 hokomili@gmail.com
 * 國立臺北教育大學 魯心耘 xinyun32889@gmail.com
 ### 3. LICENSE 種類
@@ -20,6 +20,13 @@ Solution：定期提醒領藥，避免醫療資源浪費以及囤藥導致藥物
 Solution：因為要透過健保系統領藥，並且送藥到府，可以避免盜領的問題。
 
 ### 5. 使用到的技術
+* vue.js 
+* firebase
+* git
+* svg
+* bootstrap
+* jquery
+* ~~html/css/js網頁三寶~~
 ### 6. 如何使用
 進入首頁可以看到四個選項，左滑則可以看到房意最新資訓。
 點選四個選項可以依照指示登入註冊、預約領藥、查詢處方箋或是配送進度。
