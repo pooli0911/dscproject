@@ -4,6 +4,7 @@
 body{
     overflow-x: hidden;
     font-family: 'Kosugi Maru', sans-serif;
+    background: #FFF9F2;
 }
 div{
     transition: 1.2s cubic-bezier(0.2,0,0,1);
@@ -119,6 +120,9 @@ div{
 }
 
 /* --------------Home02---------------- */
+.p_flex{
+    margin-bottom: 100px;
+}
 /* ------nav------ */
 .nav{
     width: 100%;
@@ -130,6 +134,7 @@ div{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    z-index: 90;
 }
 .nav_left_flex{
     display: flex;
@@ -233,29 +238,7 @@ div{
     background-color: #000!important;
 }
 
-/* ------delivery------ */
-.delivery_title{
-    margin-left: 5%;
-    font-weight: 800;
-    font-size: 36px;
-    color: #555555;
-}
-#de{
-    padding-top:120px;
-    height: 100vh;
-    background-color: #FFF9F2;
-}
-.a_line{
-    height: 1px;
-    width: 80%;
-    margin:3% 10%;
-    background-color: #555555;
-}
-.next_icon{
-    height: 54px;
-    width: 54px;
-    margin-bottom: 27px;
-}
+
 /* ------profile------ */
 .profile_img{
     position: absolute;
@@ -282,7 +265,7 @@ div{
 /* profile card */
 .profile_card{
     width: 540px;
-    height: 580px;
+    /* height: 580px; */
     margin-top: 190px;
     z-index :1;
 }
@@ -291,8 +274,12 @@ div{
     height: 40px;
     margin-left: 480px;
     margin-top: 20px;
+    transition: 0.3s transform;
 }  
-
+.for-icon img:hover{
+    transition: 0.3s transform;
+    transform: scale(1.15);
+}
 li{
     list-style-type: none;
     margin-top: 20px;
@@ -311,4 +298,28 @@ li{
 }
 .col{
     padding: 5px;
+}
+.add-address{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 200px;
+    
+}
+.btn-default{
+    background: rgba(255, 255, 255, 0.6);
+    color: #DE926F;
+    border: none;
+    border: 1px solid #555555!important;
+    border-radius: 10px;
+    
+}
+.btn-default:hover{
+    background:#DE926F ;
+    color: white;
+}
+
+.form-check-input:checked {
+    background-color: #DE926F;
+    border-color: #DE926F;
+
 }

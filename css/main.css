@@ -32,15 +32,7 @@ div{
 #a.active{
     transform: translateX(0vw);
 }
-/* loader */
-#loader{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    z-index: 1;
-    overflow: visible;
-    background: #FFF url('../img/loader.gif') no-repeat center center;
-}
+
 /* -----------------Container-------------------------- */
 
 
@@ -227,15 +219,27 @@ div{
     background: #000;
     
 }
+#app{
+    display: flex;
+}
 .right_flex{
 
 }
 .right_maps{
     /* width: 550px; */
     /* background: rgb(255, 113, 113); */
-    margin-left: 30%;
+    margin-left: 10px;
 }
 
+.forcast{
+    /* background-color: red; */
+    margin-left: 10px;
+    margin-top: 300px;
+    width: 300px;
+}
+.forcast h4{
+    line-height: 35px;
+}
  .spancolor li{
     background-color: #000!important;
 }
@@ -302,4 +306,3 @@ div{
     transform: scale(1.15);
 }
 
-  

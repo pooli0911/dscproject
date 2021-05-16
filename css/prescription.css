@@ -205,3 +205,12 @@ body{
 .bottom{
     height: 100px;
 }
+
+.a-color{
+    color: #dba891;
+    font-size: 20px;
+    margin-top: 30px;
+} 
+.a-color:hover{
+    color: #DE926F;
+}

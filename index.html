@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./img/favicon.ico" />
+    <link rel="icon" type="image/png" href="./img/logo-image.png" />
+
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/taiwan.css">
+    <link rel="stylesheet" href="./css/loader.css">
 
 </head>
 
@@ -41,7 +43,12 @@
                     <p>領藥預約</p>
                 </div>
                 <div class="function_area">
+<<<<<<< HEAD
                     <a href="./login.html" id="delivery"><img src="./img/003-shipped.png" alt="003-shipped" class="function_icon" ></a>
+=======
+                    <a href="./delivery.html"><img src="./img/003-shipped.png" alt="003-shipped"
+                            class="function_icon"></a>
+>>>>>>> 6097b499dd10d9cc769482d7c89fa45a32267efa
                     <p>配送進度</p>
                 </div>
                 <div id="profile" class="function_area">
@@ -142,7 +149,6 @@
                 <div class="right_flex">
                     <div class="right_maps">
                         <div id="app">
-
                             <svg id="cf503461-00bd-459a-aeb5-062ebc913211" data-name="圖層 1"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.28 841.89">
                                 <defs></defs>
@@ -204,7 +210,14 @@
                                     class="96fdfe13-4732-40bb-9e9c-cdc6e310fcb9 chiayi-c"
                                     d="M243.1,445l.34,2.24,2.07,2.07-1.38,3.1,6.9,1,.69,1.9,1.38,1.9,1.72.86,1.72-1,.86-1.72,3.1-2.41,1.38,1.21,3.1,1,.52-1.72,2.41-2.93-1.38-1.38L266,447.1l-2.07-.52-.86-1.72-1.55-1-1.9.69-1.38-1.21-1.21-1.72-1.72-.86-2.07.52-4.83,3.45-2.07-.52-3.28.86h0Z" />
                             </svg>
-
+                            <div class="title_area">
+                                <div class="forcast" v-if="now_area">
+                                    <h4>{{now_area.place}}</h4>
+                                    <h5>最新更新確診例：{{now_area.high}}</h5>
+                                    <h2>{{now_area.weather}}</h2>
+                                    <h4>{{now_area.notice}}</h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -212,8 +225,8 @@
 
         </div>
     </div>
-    </div>
-    </div>
+    <script src="./js/data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
         integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
@@ -226,6 +239,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
     <script src="./js/firebase.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/data.js"></script>
     <script type="text/javascript">
         var loader;
         function loadNow(opacity) {

@@ -1,64 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirm</title>
-    <link rel="icon" type="image/png" href="./img/favicon.ico" />
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="./img/logo-image.png" />
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/confirm.css">
+    <link rel="stylesheet" href="./css/loader.css">
 </head>
+
 <body>
     <div class="login_flex">
         <div class="login_text">
             <a href="index.html"><img class="login_img" src="./img/logo-image.png" alt="logo-image"></a>
-            <a href="index.html"><img class="login_title" src="./img/logo-text.png" alt="logo-text" ></a>
+            <a href="index.html"><img class="login_title" src="./img/logo-text.png" alt="logo-text"></a>
             <div class="login_slogan">厝邊有藥師 社區有醫院</div>
         </div>
         <div class="line"></div>
         <div class="login_form">
             <div class="circle_form">
-                <div class="circle circle1"><p class="circle_number circle_number1">1</p></div>
+                <div class="circle circle1">
+                    <p class="circle_number circle_number1">1</p>
+                </div>
                 <div class="circle_line"></div>
-                <div class="circle circle2"><p class="circle_number circle_number2">2</p></div>
+                <div class="circle circle2">
+                    <p class="circle_number circle_number2">2</p>
+                </div>
                 <div class="circle_line"></div>
-                <div class="circle circle3"><p class="circle_number circle_number3">3</p></div>
+                <div class="circle circle3">
+                    <p class="circle_number circle_number3">3</p>
+                </div>
             </div>
             <p class="input_text">確認密碼</p>
             <div class="id_form">
                 <div class="id_box">
                     <form>
                         <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label">請輸入密碼</label>
-                          <input type="password" class="form-control" id="password" aria-describedby="emailHelp">
+                            <label for="exampleInputEmail1" class="form-label">請輸入密碼</label>
+                            <input type="password" class="form-control" id="password" aria-describedby="emailHelp">
                         </div>
-                      </form>
+                    </form>
                 </div>
             </div>
             <div class="number_form">
                 <div class="number_box">
                     <form>
                         <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label">請再次輸入密碼</label>
-                          <input type="password" class="form-control" id="password2" aria-describedby="emailHelp">
+                            <label for="exampleInputEmail1" class="form-label">請再次輸入密碼</label>
+                            <input type="password" class="form-control" id="password2" aria-describedby="emailHelp">
                         </div>
-                      </form>
+                    </form>
                 </div>
             </div>
-            
+
             <div class="log_btn">
-             <button type="submit" id="setpass" class="btn btn-primary">確定</button>
+                <button type="submit" id="setpass" class="btn btn-primary">確定</button>
             </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
     <script src="./js/firebase.js"></script>
+    <script type="text/javascript">
+        var loader;
+        function loadNow(opacity) {
+            if (opacity <= 0) {
+                displayContent();
+            }
+            else {
+                loader.style.opacity = opacity;
+                window.setTimeout(function () {
+                    loadNow(opacity - 0.05)
+                }, 100);
+            }
+        }
+
+        function displayContent() {
+            loader.style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            loader = document.getElementById('loader');
+            loadNow(1);
+        });
+    </script>
 </body>
+
 </html>
