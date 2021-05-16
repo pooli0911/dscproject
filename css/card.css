@@ -14,6 +14,7 @@
 .login_title{
     font-size: 64px;
     font-family: 'Kosugi Maru', sans-serif;
+    color: #555555;
     margin-top:3%;
     width:430px;
     height:95px;
@@ -21,6 +22,7 @@
 .login_slogan{
     font-size:28px;
     font-family: 'Kosugi Maru', sans-serif;
+    color: #555555;
     margin-left:17%;
     margin-top:7%;
 }
@@ -109,10 +111,13 @@
     margin-top:8%;
 }
 .hand_input{
+    font-family: 'Kosugi Maru', sans-serif;
     font-size: 32px;
     color:#DE926F;
+    transition: 1s;
     margin-left:33%;
 }
 .hand_input:hover{
+    transition: 1s;
     color:#cf5b25;
 }

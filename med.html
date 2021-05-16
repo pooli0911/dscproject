@@ -17,122 +17,124 @@
 </head>
 
 <body>
-    <div class="color">
-        <div class="nav">
-            <a href="./index.html">
-                <div class="nav_left_flex">
-                    <img src="./img/logo-image.png" class="nav_logo" alt="logo-image">
-                    <img src="./img/logo-text.png" class="nav_title" alt="logo-text">
-                </div>
-            </a>
+    <div id="loader"></div>
+    <div id="content">
+        <div class="color">
+            <div class="nav">
+                <a href="./index.html">
+                    <div class="nav_left_flex">
+                        <img src="./img/logo-image.png" class="nav_logo" alt="logo-image">
+                        <img src="./img/logo-text.png" class="nav_title" alt="logo-text">
+                    </div>
+                </a>
 
-            <div class="nav_right_flex">
-                <img src="./img/bell.png" class="nav_remind">
-                <a href="./login.html"><img src="./img/profile.png" class="nav_account"></a>
+                <div class="nav_right_flex">
+                    <img src="./img/bell.png" class="nav_remind">
+                    <a href="./login.html"><img src="./img/profile.png" class="nav_account"></a>
+                </div>
+
+            </div>
+            <div class="med_content">
+                <div class="prep_title">領藥預約</div>
+
+                <div class="description">請選擇處方領藥(單選)/<a href="./prescription.html" class="a-color">回到處方箋</a></div>
+                <div class="container">
+                    <div class="row ">
+                        <div class="col show-flex" id="show-more">
+                            <button class="pre">
+                                <li>就醫日期：2020/12/04</li>
+                                <li>傷病名稱與主要症狀：糖尿病</li>
+                                <li>開藥醫生：王大明</li>
+                                <li>給藥天數：14天</li>
+                                <hr>
+                                <li id="show-more">可領日期：2020/12/04~2020/12/11</li>
+                            </button>
+                        </div>
+                        <div class="col show-flex">
+                            <button class="pre">
+                                <li>就醫日期：2021/02/18</li>
+                                <li>傷病名稱與主要症狀：心臟病</li>
+                                <li>開藥醫生：林美美</li>
+                                <li>給藥天數：30天</li>
+                                <hr>
+                                <li>可領日期：2020/02/18~2020/02/25</li>
+                            </button>
+                        </div>
+                        <div class="col show-flex">
+                            <button class="pre">
+                                <li>就醫日期：2021/03/09</li>
+                                <li>傷病名稱與主要症狀：高血壓</li>
+                                <li>開藥醫生：陳小華</li>
+                                <li>給藥天數：30天</li>
+                                <hr>
+                                <li>可領日期：2021/03/09~2021/03/16</li>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="booking container" id="content">
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col">
+                                <div class="timing">
+                                    預計領藥日期：
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>請選擇日期</option>
+                                        <option value="1">2020/12/07</option>
+                                        <option value="2">2020/12/08</option>
+                                        <option value="3">2020/12/09</option>
+                                        <option value="3">2020/12/10</option>
+                                        <option value="3">2020/12/11</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col"></div>
+                            <div class="col">
+                                <div class="timing">
+                                    預計領藥時間：
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>請選擇時段</option>
+                                        <option value="1">11:00~12:00</option>
+                                        <option value="2">13:30~17:30</option>
+                                        <option value="3">19:30~21:30</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                        <div class="address">
+                            領取地址：
+                            <div class=" address_ck">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        100台北市中正區重慶南路一段122號
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault2">
+                                    <label class="form-check-label " for="flexRadioDefault2">
+                                        403台中市西區五權西路一段2號
+                                    </label>
+                                </div>
+
+                            </div>
+                            <a href="###" class="add_adress">新增地址</a>
+                        </div>
+                        <div class="btn_flex">
+                            <div class="btn_icon">
+                                <div class="btn btn-default">確定送出</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+
         </div>
-        <div class="med_content">
-            <div class="prep_title">領藥預約</div>
-
-            <div class="description">請選擇處方領藥(單選)/<a href="./prescription.html" class="a-color">回到處方箋</a></div>
-            <div class="container">
-                <div class="row ">
-                    <div class="col show-flex" id="show-more">
-                        <button class="pre">
-                            <li>就醫日期：2020/12/04</li>
-                            <li>傷病名稱與主要症狀：糖尿病</li>
-                            <li>開藥醫生：王大明</li>
-                            <li>給藥天數：14天</li>
-                            <hr>
-                            <li id="show-more">可領日期：2020/12/04~2020/12/11</li>
-                        </button>
-                    </div>
-                    <div class="col show-flex">
-                        <button class="pre">
-                            <li>就醫日期：2021/02/18</li>
-                            <li>傷病名稱與主要症狀：心臟病</li>
-                            <li>開藥醫生：林美美</li>
-                            <li>給藥天數：30天</li>
-                            <hr>
-                            <li>可領日期：2020/02/18~2020/02/25</li>
-                        </button>
-                    </div>
-                    <div class="col show-flex">
-                        <button class="pre">
-                            <li>就醫日期：2021/03/09</li>
-                            <li>傷病名稱與主要症狀：高血壓</li>
-                            <li>開藥醫生：陳小華</li>
-                            <li>給藥天數：30天</li>
-                            <hr>
-                            <li>可領日期：2021/03/09~2021/03/16</li>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="booking container" id="content">
-                    <div class="row">
-                        <div class="col"></div>
-                        <div class="col">
-                            <div class="timing">
-                                預計領藥日期：
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>請選擇日期</option>
-                                    <option value="1">2020/12/07</option>
-                                    <option value="2">2020/12/08</option>
-                                    <option value="3">2020/12/09</option>
-                                    <option value="3">2020/12/10</option>
-                                    <option value="3">2020/12/11</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col"></div>
-                        <div class="col">
-                            <div class="timing">
-                                預計領藥時間：
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>請選擇時段</option>
-                                    <option value="1">11:00~12:00</option>
-                                    <option value="2">13:30~17:30</option>
-                                    <option value="3">19:30~21:30</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col"></div>
-                    </div>
-                    <div class="address">
-                        領取地址：
-                        <div class=" address_ck">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    100台北市中正區重慶南路一段122號
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault2">
-                                <label class="form-check-label " for="flexRadioDefault2">
-                                    403台中市西區五權西路一段2號
-                                </label>
-                            </div>
-
-                        </div>
-                        <a href="###" class="add_adress">新增地址</a>
-                    </div>
-                    <div class="btn_flex">
-                        <div class="btn_icon">
-                            <div class="btn btn-default">確定送出</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
     </div>
-
 
 
 
