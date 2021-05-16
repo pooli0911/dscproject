@@ -126,7 +126,7 @@ firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         var uid = user.uid;
         console.log(uid)
-        console.log(user.photoURL)
+        console.log(user.email.split('@')[0])
         docRef=db.collection("profiles").doc(user.email.split('@')[0])
         docRef.get().then((doc) => {
             $('.nav_account').attr("src",user.photoURL)
@@ -138,11 +138,29 @@ firebase.auth().onAuthStateChanged((user) => {
             $('#profile').html('<a href="profile.html"><img src="./img/information.png" alt="1060387" class="function_icon"></a><p>個人頁面</p>');
             $('.profile_img').attr("src",user.photoURL);
             $('#identity').text(doc.data().id);
-            $('#health').text(doc.data().healthid);
             $('#adress').text(doc.data().adress);
             $('#home').text(doc.data().home);
             $('#phone').text(doc.data().phone);
         }).catch((error) => {
+            var capi=user.email.split('@')[0]
+            capi=(capi.charAt(0).toUpperCase() + capi.slice(1))
+            docRef=db.collection("profiles").doc(capi)
+            docRef.get().then((doc) => {
+                $('.nav_account').attr("src",user.photoURL)
+                $('.nav_account').attr("style","border-radius:50%")
+                $('#nav_account').attr("href","./profile.html")
+                $('#prescription').attr("href", "./prescription.html");
+                $('#med').attr("href", "./med.html");
+                $('#delivery').attr("href", "./delivery.html");
+                $('#profile').html('<a href="profile.html"><img src="./img/information.png" alt="1060387" class="function_icon"></a><p>個人頁面</p>');
+                $('.profile_img').attr("src",user.photoURL);
+                $('#identity').text("身分證字號："+doc.data().id);
+                $('#address').text("戶籍地址："+doc.data().adress);
+                $('#home').text("市內電話："+doc.data().home);
+                $('#phone').text("手機號碼："+doc.data().phone);
+            }).catch((error) => {
+                console.log("Error getting document:", error);
+            })
             console.log("Error getting document:", error);
         })
     } else {
