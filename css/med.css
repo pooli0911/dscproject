@@ -94,10 +94,12 @@ body{
     /* margin: 20px; */
     background: #fff;
     /* border: 1px red solid; */
+    transition: 0.5s;
     border-radius: 10px;
 }
 .pre:hover{
     border: 2px #DE926F solid;
+    transition: 0.5s;
 }
 li{
     list-style-type: none;
@@ -168,7 +170,6 @@ li{
     background: rgba(255, 255, 255, 0.6);
     color: #DE926F;
     font-size: 24px;
-    
     border: none;
     width: 160px;
     height: 55px;
@@ -184,7 +185,6 @@ li{
 .form-check-input:checked {
     background-color: #DE926F;
     border-color: #DE926F;
-
 }
 
 .show-flex{
