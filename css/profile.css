@@ -5,6 +5,7 @@ body{
     overflow-x: hidden;
     font-family: 'Kosugi Maru', sans-serif;
     background: #FFF9F2;
+    min-height: 100vh;
 }
 div{
     transition: 1.2s cubic-bezier(0.2,0,0,1);
@@ -38,7 +39,7 @@ div{
     position: fixed;
     width: 100%;
     height: 100vh;
-    z-index: 1;
+    z-index: 10;
     overflow: visible;
     background: #FFF url('../img/loader.gif') no-repeat center center;
 }
@@ -322,4 +323,7 @@ li{
     background-color: #DE926F;
     border-color: #DE926F;
 
+}
+.detail{
+    margin-bottom: 50px;
 }
