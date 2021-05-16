@@ -124,13 +124,24 @@ $('#enter').click(()=> {
 });
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      var uid = user.uid;
-      console.log(uid)
-      console.log(user.photoURL)
-      $('.nav_account').attr("src",user.photoURL)
-      $('.nav_account').attr("style","border-radius:50%")
-      $('#nav_account').attr("href","./profile.html")
-      $('#profile').html('<a href="profile.html"><img src="./img/information.png" alt="1060387" class="function_icon"></a><p>個人頁面</p>');
+        var uid = user.uid;
+        console.log(uid)
+        console.log(user.photoURL)
+        docRef=db.collection("profiles").doc(user.email.split('@')[0])
+        docRef.get().then((doc) => {
+            $('.nav_account').attr("src",user.photoURL)
+            $('.nav_account').attr("style","border-radius:50%")
+            $('#nav_account').attr("href","./profile.html")
+            $('#profile').html('<a href="profile.html"><img src="./img/information.png" alt="1060387" class="function_icon"></a><p>個人頁面</p>');
+            $('.profile_img').attr("src",user.photoURL);
+            $('#identity').text(doc.data().id);
+            $('#health').text(doc.data().healthid);
+            $('#adress').text(doc.data().adress);
+            $('#home').text(doc.data().home);
+            $('#phone').text(doc.data().phone);
+        }).catch((error) => {
+            console.log("Error getting document:", error);
+        })
     } else {
     }
   });
